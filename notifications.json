@@ -1,0 +1,28 @@
+[
+  {
+    "id": "notif-1791238678464-ct0k",
+    "userId": "all",
+    "title": "Nova OS Cadastrada",
+    "message": "A Ordem de Serviço OS-0153 (TechCorp Inovação Digital Ltda) foi aberta com prioridade Alta.",
+    "type": "alert",
+    "osId": "OS-0153",
+    "read": false,
+    "createdAt": "2026-10-05T22:17:58.464Z"
+  },
+  {
+    "id": "notif-1",
+    "title": "Sistema Pronto para Produção",
+    "message": "Base de dados preenchida com clientes, técnicos e histórico completo de O.S.",
+    "type": "success",
+    "read": false,
+    "createdAt": "2026-08-21T13:48:45.102Z"
+  },
+  {
+    "id": "notif-2",
+    "title": "Chamados em Aberto",
+    "message": "Existem ordens de serviço aguardando triagem e atendimento técnico.",
+    "type": "info",
+    "read": false,
+    "createdAt": "2026-08-21T13:48:45.102Z"
+  }
+]

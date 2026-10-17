@@ -1,0 +1,6 @@
+{
+  "name": "Studio Web App",
+  "description": "Aplicação web moderna, interativa e responsiva.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

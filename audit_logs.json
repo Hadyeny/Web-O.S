@@ -1,0 +1,52 @@
+[
+  {
+    "id": "log-1791238678463",
+    "userId": "u-1",
+    "userName": "Rogerio",
+    "userRole": "admin",
+    "action": "CRIAR_OS",
+    "targetId": "OS-0153",
+    "details": "Criada OS OS-0153 para o cliente TechCorp Inovação Digital Ltda (Servidor HP ProLiant).",
+    "createdAt": "2026-10-05T22:17:58.464Z"
+  },
+  {
+    "id": "log-1791238665870",
+    "userId": "u-1",
+    "userName": "Rogerio",
+    "userRole": "admin",
+    "action": "LOGIN_SUCESSO",
+    "targetId": "u-1",
+    "details": "Login efetuado com sucesso via credenciais criptografadas.",
+    "createdAt": "2026-10-05T22:17:45.870Z"
+  },
+  {
+    "id": "log-1791228417918",
+    "userId": "u-1",
+    "userName": "Rogerio",
+    "userRole": "admin",
+    "action": "LOGIN_SUCESSO",
+    "targetId": "u-1",
+    "details": "Login realizado com sucesso por Rogerio (Administrador). Sessão com cookies httpOnly, secure e sameSite=lax configurada.",
+    "createdAt": "2026-10-05T19:26:57.918Z"
+  },
+  {
+    "id": "log-seed-1",
+    "userId": "u-1",
+    "userName": "Rogerio",
+    "userRole": "admin",
+    "action": "BANCO_SEMEADO",
+    "targetId": "database",
+    "details": "Base de dados populada com 107 clientes e 151 ordens de serviço.",
+    "createdAt": "2026-08-21T13:48:45.102Z"
+  },
+  {
+    "id": "log-seed-2",
+    "userId": "u-1",
+    "userName": "Rogerio",
+    "userRole": "admin",
+    "action": "CONFIGURACAO_SEGURANCA",
+    "targetId": "system",
+    "details": "Políticas de autenticação com cookies seguros HTTP-Only e rotação de Refresh Tokens ativadas.",
+    "createdAt": "2026-08-21T13:48:45.102Z"
+  }
+]

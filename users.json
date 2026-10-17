@@ -1,0 +1,47 @@
+[
+  {
+    "id": "u-1",
+    "name": "Rogerio",
+    "email": "rogerio@plioou.com",
+    "role": "admin",
+    "active": true,
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+    "passwordHash": "$2b$10$JGr9M76cFKF95HWuSLSmROUmlUuvSbQ0gkKg/NqDIQoPz/1Nybwcu",
+    "createdAt": "2026-01-01T08:00:00.000Z",
+    "lastLoginAt": "2026-10-05T22:17:45.869Z",
+    "tokenVersion": 1
+  },
+  {
+    "id": "u-2",
+    "name": "Leonardo",
+    "email": "leonardo@plioou.com",
+    "role": "technician",
+    "active": true,
+    "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+    "passwordHash": "$2b$10$fiXOq09uhO7M1HyJ54ku/.tiu5d.D8aJ8kwWBlPXwoPdkLJDxxVDa",
+    "createdAt": "2026-01-01T08:00:00.000Z",
+    "tokenVersion": 1
+  },
+  {
+    "id": "u-3",
+    "name": "Pedro",
+    "email": "pedro@plioou.com",
+    "role": "technician",
+    "active": true,
+    "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=150&auto=format&fit=crop&q=80",
+    "passwordHash": "$2b$10$VocheWYRW/InbdRfV18dbOGQz0ERJnaAATRS6qHfeRgkWAk2qjYPi",
+    "createdAt": "2026-01-01T08:00:00.000Z",
+    "tokenVersion": 1
+  },
+  {
+    "id": "u-4",
+    "name": "Everson Fuzetto",
+    "email": "everson@plioou.com",
+    "role": "technician",
+    "active": true,
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+    "passwordHash": "$2b$10$hkPQKJO3BFOTYc0FeSN8AOsyy8JUxVFpO/q8jpr8Mc1qs1xUUf6/W",
+    "createdAt": "2026-01-01T08:00:00.000Z",
+    "tokenVersion": 1
+  }
+]

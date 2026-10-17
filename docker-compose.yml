@@ -1,0 +1,84 @@
+services:
+  caddy:
+    image: caddy:2-alpine
+    container_name: plioou_caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      app:
+        condition: service_healthy
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: plioou_app
+    restart: unless-stopped
+    expose:
+      - "3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - DATABASE_URL=postgres://${POSTGRES_USER:-plioou}:${POSTGRES_PASSWORD:-plioou_secure_pwd_2026}@postgres:5432/${POSTGRES_DB:-plioou_db}
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=${JWT_SECRET:-plioou_jwt_secret_change_me_in_prod!}
+      - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET:-plioou_jwt_refresh_secret_change_me_in_prod!}
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY:-plioou_encryption_32_bytes_key_master!}
+      - SIGNATURE_SECRET=${SIGNATURE_SECRET:-plioou_signature_secret_hmac_2026!}
+      - APP_URL=${APP_URL:-http://localhost}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/healthz"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    volumes:
+      - plioou_data:/app/data
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: plioou_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-plioou}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-plioou_secure_pwd_2026}
+      POSTGRES_DB: ${POSTGRES_DB:-plioou_db}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-plioou} -d ${POSTGRES_DB:-plioou_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  redis:
+    image: redis:7-alpine
+    container_name: plioou_redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+volumes:
+  pgdata:
+  redis_data:
+  plioou_data:
+  caddy_data:
+  caddy_config:
